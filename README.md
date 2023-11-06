@@ -1,5 +1,4 @@
-# 2324-MINEGDG-EGP1-?
+# 2324-MINEGDG-EGP1-project-villa-electrica-VR
 
-> Vervang het vraagteken in de kop, haal deze regel weg.
-
-> Vervang deze regel door je HU-mailadres
+jarno.brocker@student.hu.nl
+daan.roth@student.hu.nl
