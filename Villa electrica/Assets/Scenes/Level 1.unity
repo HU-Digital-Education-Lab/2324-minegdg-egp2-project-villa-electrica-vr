@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18029143, g: 0.22572419, b: 0.30693057, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8923,7 +8923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc95fcec32a46d845b1f7678950c0423, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TouchZone: {fileID: 0}
+  TouchZone: {fileID: 1936918526}
   Replacement: {fileID: 4444348813064129675, guid: 624970e932a77274ea2f24daddc5c675,
     type: 3}
   errorSound: {fileID: 8300000, guid: df2fcf9f801631146a7ef6a91322166a, type: 3}
@@ -10408,6 +10408,12 @@ PrefabInstance:
 --- !u!4 &1936918525 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7751184542240753253, guid: 08dfed96606843046b88dfcae3a2da80,
+    type: 3}
+  m_PrefabInstance: {fileID: 1936918524}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1936918526 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5152499449825497149, guid: 08dfed96606843046b88dfcae3a2da80,
     type: 3}
   m_PrefabInstance: {fileID: 1936918524}
   m_PrefabAsset: {fileID: 0}
