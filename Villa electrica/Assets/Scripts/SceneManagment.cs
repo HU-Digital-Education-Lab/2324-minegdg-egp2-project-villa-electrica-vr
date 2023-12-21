@@ -22,6 +22,5 @@ public class SceneManagment : MonoBehaviour
     public void StartLevel1()
     {
         SceneManager.LoadScene(level1Name);
-        Debug.Log(SceneManager.GetActiveScene().name);
     }
 }

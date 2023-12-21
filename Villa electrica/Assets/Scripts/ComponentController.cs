@@ -8,10 +8,15 @@ public class ComponentController : MonoBehaviour
     public GameObject TouchZone;
     // Object containing the object that replaces the zone with a component
     public GameObject Replacement;
+    public bool isPart1;
 
     private AudioSource source;
     public AudioClip errorSound;
     public AudioClip correctSound;
+
+    public bool correctPlace = false;
+    private GameObject part1_clone;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,27 +35,35 @@ public class ComponentController : MonoBehaviour
         // check if object is in the right zone.
         if (TouchZone == other.gameObject)
         {
-            // get size of object
-            float objectSize = other.gameObject.GetComponent<Renderer>().bounds.size.y;
-            // get top position of object
-            float objectTop = other.gameObject.transform.position.y - objectSize/2;
-
-            // create a new position for the replacement object.
-            Vector3 position = new Vector3(other.gameObject.transform.position.x, objectTop , other.gameObject.transform.position.z);
-
-            // instantiate the replacement.
-            Instantiate(Replacement, position, Quaternion.Euler(new Vector3(0, 180, 0)));
+            if (isPart1) 
+            {
+                float objectTop = other.gameObject.transform.position.y - other.gameObject.GetComponent<Renderer>().bounds.size.y/2;
+                Vector3 position = new Vector3(other.gameObject.transform.position.x, objectTop , other.gameObject.transform.position.z);
+                part1_clone = Instantiate(Replacement, position, Quaternion.Euler(new Vector3(0, 180, 0)));
+            }
+            else
+            {
+                Vector3 position = new Vector3(other.gameObject.transform.position.x, other.gameObject.transform.position.y, other.gameObject.transform.position.z);
+                part1_clone = Instantiate(Replacement, position, Quaternion.Euler(new Vector3(0, -90, 0)));
+            }
             
             // play the right sound.
             source.PlayOneShot(correctSound);
 
+            correctPlace = true;
+
             // destroy both the touch zone and the component.
-            Destroy(gameObject, 0.2f);
+            this.gameObject.SetActive(false);
             Destroy(other.gameObject, 0.2f);
             
         } else {
             // play error sound when in the wrong zone.
             source.PlayOneShot(errorSound);
         }
+    }
+
+    public GameObject GetPart1Clone()
+    {
+        return part1_clone;
     }
 }
