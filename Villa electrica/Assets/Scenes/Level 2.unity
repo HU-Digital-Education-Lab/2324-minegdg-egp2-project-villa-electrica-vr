@@ -1064,6 +1064,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 739345792}
     m_Modifications:
+    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Blauwe kabel
+      objectReference: {fileID: 0}
     - target: {fileID: 1910689251651144037, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1128,11 +1133,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
-        type: 3}
-      propertyPath: m_Name
-      value: Blauwe kabel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3083,6 +3083,7 @@ MonoBehaviour:
   isPart1: 0
   errorSound: {fileID: 8300000, guid: df2fcf9f801631146a7ef6a91322166a, type: 3}
   correctSound: {fileID: 8300000, guid: 3ffb7ca7890a9e642b76b5ace0846dd6, type: 3}
+  isCable: 0
   correctPlace: 0
 --- !u!114 &80273547
 MonoBehaviour:
@@ -5444,6 +5445,7 @@ MonoBehaviour:
   isPart1: 0
   errorSound: {fileID: 8300000, guid: df2fcf9f801631146a7ef6a91322166a, type: 3}
   correctSound: {fileID: 8300000, guid: 3ffb7ca7890a9e642b76b5ace0846dd6, type: 3}
+  isCable: 0
   correctPlace: 0
 --- !u!144 &130137574
 CharacterJoint:
@@ -5830,6 +5832,8 @@ GameObject:
   - component: {fileID: 135778392}
   - component: {fileID: 135778391}
   - component: {fileID: 135778390}
+  - component: {fileID: 135778397}
+  - component: {fileID: 135778396}
   m_Layer: 0
   m_Name: Hitbox
   m_TagString: Untagged
@@ -6149,6 +6153,122 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 135778388}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!82 &135778396
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135778388}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &135778397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135778388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc95fcec32a46d845b1f7678950c0423, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TouchZone: {fileID: 2091993955}
+  Replacement: {fileID: 5346222169037375792, guid: 00c01a6b7d374b841a96aebeb697632c,
+    type: 3}
+  isPart1: 0
+  errorSound: {fileID: 8300000, guid: df2fcf9f801631146a7ef6a91322166a, type: 3}
+  correctSound: {fileID: 8300000, guid: 3ffb7ca7890a9e642b76b5ace0846dd6, type: 3}
+  isCable: 1
+  correctPlace: 0
 --- !u!1 &135817600
 GameObject:
   m_ObjectHideFlags: 0
@@ -6189,6 +6309,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 87356626}
     m_Modifications:
+    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Blauwe kabel
+      objectReference: {fileID: 0}
     - target: {fileID: 1910689251651144037, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -6253,11 +6378,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
-        type: 3}
-      propertyPath: m_Name
-      value: Blauwe kabel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7555,6 +7675,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1059500367}
     m_Modifications:
+    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Blauwe kabel
+      objectReference: {fileID: 0}
     - target: {fileID: 1910689251651144037, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -7619,11 +7744,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
-        type: 3}
-      propertyPath: m_Name
-      value: Blauwe kabel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8727,6 +8847,7 @@ MonoBehaviour:
   isPart1: 0
   errorSound: {fileID: 8300000, guid: df2fcf9f801631146a7ef6a91322166a, type: 3}
   correctSound: {fileID: 8300000, guid: 3ffb7ca7890a9e642b76b5ace0846dd6, type: 3}
+  isCable: 0
   correctPlace: 0
 --- !u!114 &198542121
 MonoBehaviour:
@@ -9326,6 +9447,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 143414990}
     m_Modifications:
+    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Blauwe kabel
+      objectReference: {fileID: 0}
     - target: {fileID: 1910689251651144037, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -9390,11 +9516,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
-        type: 3}
-      propertyPath: m_Name
-      value: Blauwe kabel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9483,6 +9604,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1194272767}
     m_Modifications:
+    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Blauwe kabel
+      objectReference: {fileID: 0}
     - target: {fileID: 1910689251651144037, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -9547,11 +9673,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
-        type: 3}
-      propertyPath: m_Name
-      value: Blauwe kabel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9598,6 +9719,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1029014129}
     m_Modifications:
+    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Blauwe kabel
+      objectReference: {fileID: 0}
     - target: {fileID: 1910689251651144037, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -9662,11 +9788,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
-        type: 3}
-      propertyPath: m_Name
-      value: Blauwe kabel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10610,6 +10731,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1434994959}
     m_Modifications:
+    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Blauwe kabel
+      objectReference: {fileID: 0}
     - target: {fileID: 1910689251651144037, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -10674,11 +10800,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
-        type: 3}
-      propertyPath: m_Name
-      value: Blauwe kabel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12813,6 +12934,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 635952888}
     m_Modifications:
+    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Blauwe kabel
+      objectReference: {fileID: 0}
     - target: {fileID: 1910689251651144037, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -12877,11 +13003,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
-        type: 3}
-      propertyPath: m_Name
-      value: Blauwe kabel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13582,6 +13703,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1020187831}
     m_Modifications:
+    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Blauwe kabel
+      objectReference: {fileID: 0}
     - target: {fileID: 1910689251651144037, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -13646,11 +13772,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
-        type: 3}
-      propertyPath: m_Name
-      value: Blauwe kabel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16171,6 +16292,7 @@ MonoBehaviour:
   isPart1: 1
   errorSound: {fileID: 8300000, guid: df2fcf9f801631146a7ef6a91322166a, type: 3}
   correctSound: {fileID: 8300000, guid: 3ffb7ca7890a9e642b76b5ace0846dd6, type: 3}
+  isCable: 0
   correctPlace: 0
 --- !u!114 &421743439
 MonoBehaviour:
@@ -16469,7 +16591,6 @@ Transform:
   - {fileID: 1029195559}
   - {fileID: 1716206334}
   - {fileID: 915245167}
-  - {fileID: 2133751335}
   m_Father: {fileID: 1753625066}
   m_LocalEulerAnglesHint: {x: 0, y: -206.539, z: 0}
 --- !u!1001 &424702383
@@ -16935,6 +17056,74 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 21074774}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &453488929
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 672767157}
+    m_Modifications:
+    - target: {fileID: 5152499449825497149, guid: 08dfed96606843046b88dfcae3a2da80,
+        type: 3}
+      propertyPath: m_Name
+      value: Touch Zone
+      objectReference: {fileID: 0}
+    - target: {fileID: 7751184542240753253, guid: 08dfed96606843046b88dfcae3a2da80,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.921217
+      objectReference: {fileID: 0}
+    - target: {fileID: 7751184542240753253, guid: 08dfed96606843046b88dfcae3a2da80,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.82410717
+      objectReference: {fileID: 0}
+    - target: {fileID: 7751184542240753253, guid: 08dfed96606843046b88dfcae3a2da80,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.4347386
+      objectReference: {fileID: 0}
+    - target: {fileID: 7751184542240753253, guid: 08dfed96606843046b88dfcae3a2da80,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7751184542240753253, guid: 08dfed96606843046b88dfcae3a2da80,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7751184542240753253, guid: 08dfed96606843046b88dfcae3a2da80,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7751184542240753253, guid: 08dfed96606843046b88dfcae3a2da80,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7751184542240753253, guid: 08dfed96606843046b88dfcae3a2da80,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7751184542240753253, guid: 08dfed96606843046b88dfcae3a2da80,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7751184542240753253, guid: 08dfed96606843046b88dfcae3a2da80,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 08dfed96606843046b88dfcae3a2da80, type: 3}
 --- !u!1 &453539376
 GameObject:
   m_ObjectHideFlags: 0
@@ -17099,6 +17288,7 @@ MonoBehaviour:
   isPart1: 1
   errorSound: {fileID: 8300000, guid: df2fcf9f801631146a7ef6a91322166a, type: 3}
   correctSound: {fileID: 8300000, guid: 3ffb7ca7890a9e642b76b5ace0846dd6, type: 3}
+  isCable: 0
   correctPlace: 0
 --- !u!114 &453539380
 MonoBehaviour:
@@ -17850,6 +18040,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1160459273}
     m_Modifications:
+    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Blauwe kabel
+      objectReference: {fileID: 0}
     - target: {fileID: 1910689251651144037, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -17914,11 +18109,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
-        type: 3}
-      propertyPath: m_Name
-      value: Blauwe kabel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18078,6 +18268,7 @@ MonoBehaviour:
   isPart1: 0
   errorSound: {fileID: 8300000, guid: df2fcf9f801631146a7ef6a91322166a, type: 3}
   correctSound: {fileID: 8300000, guid: 3ffb7ca7890a9e642b76b5ace0846dd6, type: 3}
+  isCable: 0
   correctPlace: 0
 --- !u!114 &469123767
 MonoBehaviour:
@@ -19698,6 +19889,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 731453999}
     m_Modifications:
+    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Blauwe kabel
+      objectReference: {fileID: 0}
     - target: {fileID: 1910689251651144037, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -19763,11 +19959,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
-        type: 3}
-      propertyPath: m_Name
-      value: Blauwe kabel
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19797,11 +19988,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 529163847}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -7.380217, y: 3.2121072, z: 5.6112614}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 672767157}
   - {fileID: 1588180326}
   - {fileID: 1753625066}
   m_Father: {fileID: 0}
@@ -19926,6 +20118,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2120491156}
     m_Modifications:
+    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Blauwe kabel
+      objectReference: {fileID: 0}
     - target: {fileID: 1910689251651144037, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -19990,11 +20187,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
-        type: 3}
-      propertyPath: m_Name
-      value: Blauwe kabel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20914,6 +21106,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 226698509}
     m_Modifications:
+    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Blauwe kabel
+      objectReference: {fileID: 0}
     - target: {fileID: 1910689251651144037, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -20978,11 +21175,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
-        type: 3}
-      propertyPath: m_Name
-      value: Blauwe kabel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22719,6 +22911,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1036631221}
     m_Modifications:
+    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Blauwe kabel
+      objectReference: {fileID: 0}
     - target: {fileID: 1910689251651144037, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -22784,16 +22981,43 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
-        type: 3}
-      propertyPath: m_Name
-      value: Blauwe kabel
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f88c2e60004c7b4db384a3aa53ea8e0, type: 3}
+--- !u!1 &672767156
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 672767157}
+  m_Layer: 0
+  m_Name: Touch Zones
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &672767157
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672767156}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2091993959}
+  m_Father: {fileID: 529163848}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &685845162
 GameObject:
   m_ObjectHideFlags: 0
@@ -23305,6 +23529,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1090139635}
     m_Modifications:
+    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Blauwe kabel
+      objectReference: {fileID: 0}
     - target: {fileID: 1910689251651144037, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -23369,11 +23598,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
-        type: 3}
-      propertyPath: m_Name
-      value: Blauwe kabel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25731,6 +25955,7 @@ MonoBehaviour:
   isPart1: 1
   errorSound: {fileID: 8300000, guid: df2fcf9f801631146a7ef6a91322166a, type: 3}
   correctSound: {fileID: 8300000, guid: 3ffb7ca7890a9e642b76b5ace0846dd6, type: 3}
+  isCable: 0
   correctPlace: 0
 --- !u!114 &787211015
 MonoBehaviour:
@@ -26768,6 +26993,7 @@ MonoBehaviour:
   isPart1: 1
   errorSound: {fileID: 8300000, guid: df2fcf9f801631146a7ef6a91322166a, type: 3}
   correctSound: {fileID: 8300000, guid: 3ffb7ca7890a9e642b76b5ace0846dd6, type: 3}
+  isCable: 0
   correctPlace: 0
 --- !u!114 &804304276
 MonoBehaviour:
@@ -28227,6 +28453,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 27220232}
     m_Modifications:
+    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Blauwe kabel
+      objectReference: {fileID: 0}
     - target: {fileID: 1910689251651144037, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -28291,11 +28522,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
-        type: 3}
-      propertyPath: m_Name
-      value: Blauwe kabel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28766,6 +28992,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1579182599}
     m_Modifications:
+    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Blauwe kabel
+      objectReference: {fileID: 0}
     - target: {fileID: 1910689251651144037, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -28830,11 +29061,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
-        type: 3}
-      propertyPath: m_Name
-      value: Blauwe kabel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29972,6 +30198,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 962679092}
     m_Modifications:
+    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Blauwe kabel
+      objectReference: {fileID: 0}
     - target: {fileID: 1910689251651144037, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -30036,11 +30267,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
-        type: 3}
-      propertyPath: m_Name
-      value: Blauwe kabel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -32652,6 +32878,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 930333051}
     m_Modifications:
+    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Blauwe kabel
+      objectReference: {fileID: 0}
     - target: {fileID: 1910689251651144037, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -32716,11 +32947,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
-        type: 3}
-      propertyPath: m_Name
-      value: Blauwe kabel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -33431,6 +33657,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1036631221}
+  - {fileID: 2133751335}
   m_Father: {fileID: 422502411}
   m_LocalEulerAnglesHint: {x: -82.555, y: -164.27, z: 102.966}
 --- !u!1 &1036631214
@@ -34920,6 +35147,7 @@ MonoBehaviour:
   isPart1: 0
   errorSound: {fileID: 8300000, guid: df2fcf9f801631146a7ef6a91322166a, type: 3}
   correctSound: {fileID: 8300000, guid: 3ffb7ca7890a9e642b76b5ace0846dd6, type: 3}
+  isCable: 0
   correctPlace: 0
 --- !u!144 &1089847034
 CharacterJoint:
@@ -41517,6 +41745,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 58422561}
     m_Modifications:
+    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Blauwe kabel
+      objectReference: {fileID: 0}
     - target: {fileID: 1910689251651144037, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -41581,11 +41814,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
-        type: 3}
-      propertyPath: m_Name
-      value: Blauwe kabel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -43082,6 +43310,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 475312149}
     m_Modifications:
+    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Blauwe kabel
+      objectReference: {fileID: 0}
     - target: {fileID: 1910689251651144037, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -43146,11 +43379,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
-        type: 3}
-      propertyPath: m_Name
-      value: Blauwe kabel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -45212,6 +45440,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 12634894}
     m_Modifications:
+    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Blauwe kabel
+      objectReference: {fileID: 0}
     - target: {fileID: 1910689251651144037, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -45276,11 +45509,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
-        type: 3}
-      propertyPath: m_Name
-      value: Blauwe kabel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -47896,6 +48124,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 114012777}
     m_Modifications:
+    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Blauwe kabel
+      objectReference: {fileID: 0}
     - target: {fileID: 1910689251651144037, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -47960,11 +48193,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
-        type: 3}
-      propertyPath: m_Name
-      value: Blauwe kabel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -48979,6 +49207,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1727814274}
     m_Modifications:
+    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Blauwe kabel
+      objectReference: {fileID: 0}
     - target: {fileID: 1910689251651144037, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -49043,11 +49276,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
-        type: 3}
-      propertyPath: m_Name
-      value: Blauwe kabel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -50300,6 +50528,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1290444134}
     m_Modifications:
+    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Blauwe kabel
+      objectReference: {fileID: 0}
     - target: {fileID: 1910689251651144037, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -50364,11 +50597,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
-        type: 3}
-      propertyPath: m_Name
-      value: Blauwe kabel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -50383,6 +50611,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7862011}
     m_Modifications:
+    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Blauwe kabel
+      objectReference: {fileID: 0}
     - target: {fileID: 1910689251651144037, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -50447,11 +50680,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
-        type: 3}
-      propertyPath: m_Name
-      value: Blauwe kabel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -50549,6 +50777,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 801216183}
     m_Modifications:
+    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Blauwe kabel
+      objectReference: {fileID: 0}
     - target: {fileID: 1910689251651144037, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -50613,11 +50846,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
-        type: 3}
-      propertyPath: m_Name
-      value: Blauwe kabel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -51170,6 +51398,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 995590336}
     m_Modifications:
+    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Blauwe kabel
+      objectReference: {fileID: 0}
     - target: {fileID: 1910689251651144037, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -51234,11 +51467,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
-        type: 3}
-      propertyPath: m_Name
-      value: Blauwe kabel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -51448,6 +51676,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 421743443}
     m_Modifications:
+    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Blauwe kabel
+      objectReference: {fileID: 0}
     - target: {fileID: 1910689251651144037, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -51512,11 +51745,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
-        type: 3}
-      propertyPath: m_Name
-      value: Blauwe kabel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -58410,6 +58638,7 @@ MonoBehaviour:
   isPart1: 0
   errorSound: {fileID: 8300000, guid: df2fcf9f801631146a7ef6a91322166a, type: 3}
   correctSound: {fileID: 8300000, guid: 3ffb7ca7890a9e642b76b5ace0846dd6, type: 3}
+  isCable: 0
   correctPlace: 0
 --- !u!114 &1947868229
 MonoBehaviour:
@@ -61158,6 +61387,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 715815265}
     m_Modifications:
+    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
+        type: 3}
+      propertyPath: m_Name
+      value: Blauwe kabel
+      objectReference: {fileID: 0}
     - target: {fileID: 1910689251651144037, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -61222,11 +61456,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1283509868512318431, guid: 8f88c2e60004c7b4db384a3aa53ea8e0,
-        type: 3}
-      propertyPath: m_Name
-      value: Blauwe kabel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -61909,6 +62138,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f3d4893817099414c96e7b288f486b61,
     type: 3}
   m_PrefabInstance: {fileID: 2087550963}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2091993955 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5152499449825497149, guid: 08dfed96606843046b88dfcae3a2da80,
+    type: 3}
+  m_PrefabInstance: {fileID: 453488929}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2091993959 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7751184542240753253, guid: 08dfed96606843046b88dfcae3a2da80,
+    type: 3}
+  m_PrefabInstance: {fileID: 453488929}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2100088835
 PrefabInstance:
@@ -63222,13 +63463,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2133751334}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.6386959, y: -0.39297783, z: -0.3265033, w: 0.5753535}
-  m_LocalPosition: {x: -11.949, y: -34.758, z: 63.837}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0014553964, y: 0.5483545, z: -0.00024196506}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 12634894}
-  m_Father: {fileID: 422502411}
+  m_Father: {fileID: 1029195559}
   m_LocalEulerAnglesHint: {x: -82.555, y: -164.27, z: 102.966}
 --- !u!4 &2138910278 stripped
 Transform:

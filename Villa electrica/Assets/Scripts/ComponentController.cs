@@ -14,14 +14,22 @@ public class ComponentController : MonoBehaviour
     public AudioClip errorSound;
     public AudioClip correctSound;
 
+    public bool isCable;
     public bool correctPlace = false;
     private GameObject part1_clone;
+
+    Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
         // get the audio source.
         source = GetComponent<AudioSource>();
+        rb =  gameObject.GetComponent<Rigidbody>();
+        rb.constraints =    RigidbodyConstraints.FreezePositionX | 
+                            RigidbodyConstraints.FreezePositionY | 
+                            RigidbodyConstraints.FreezePositionZ;
+
     }
 
     // Update is called once per frame
@@ -35,26 +43,35 @@ public class ComponentController : MonoBehaviour
         // check if object is in the right zone.
         if (TouchZone == other.gameObject)
         {
-            if (isPart1) 
+            if (isCable)
             {
-                float objectTop = other.gameObject.transform.position.y - other.gameObject.GetComponent<Renderer>().bounds.size.y/2;
-                Vector3 position = new Vector3(other.gameObject.transform.position.x, objectTop , other.gameObject.transform.position.z);
-                part1_clone = Instantiate(Replacement, position, Quaternion.Euler(new Vector3(0, 180, 0)));
+                    rb.useGravity = false;
+                    source.PlayOneShot(correctSound);
             }
-            else
+            else 
             {
-                Vector3 position = new Vector3(other.gameObject.transform.position.x, other.gameObject.transform.position.y, other.gameObject.transform.position.z);
-                part1_clone = Instantiate(Replacement, position, Quaternion.Euler(new Vector3(0, -90, 0)));
-            }
+                if (isPart1) 
+                {
+                    float objectTop = other.gameObject.transform.position.y - other.gameObject.GetComponent<Renderer>().bounds.size.y/2;
+                    Vector3 position = new Vector3(other.gameObject.transform.position.x, objectTop , other.gameObject.transform.position.z);
+                    part1_clone = Instantiate(Replacement, position, Quaternion.Euler(new Vector3(0, 180, 0)));
+                }
+                else
+                {
+                    Vector3 position = new Vector3(other.gameObject.transform.position.x, other.gameObject.transform.position.y, other.gameObject.transform.position.z);
+                    part1_clone = Instantiate(Replacement, position, Quaternion.Euler(new Vector3(0, -90, 0)));
+                }
             
-            // play the right sound.
-            source.PlayOneShot(correctSound);
+                // play the right sound.
+                source.PlayOneShot(correctSound);
 
-            correctPlace = true;
+                correctPlace = true;
 
-            // destroy both the touch zone and the component.
-            this.gameObject.SetActive(false);
-            Destroy(other.gameObject, 0.2f);
+                // destroy both the touch zone and the component.
+                this.gameObject.SetActive(false);
+                Destroy(other.gameObject, 0.2f);
+            }
+
             
         } else {
             // play error sound when in the wrong zone.
