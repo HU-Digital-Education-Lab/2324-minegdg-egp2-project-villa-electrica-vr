@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Electriciteitsmeter Slot
   - Aansluitkast Slot
+  - Level Manager
   layers:
   - Default
   - TransparentFX

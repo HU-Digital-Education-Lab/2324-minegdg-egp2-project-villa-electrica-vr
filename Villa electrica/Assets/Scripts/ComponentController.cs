@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 // using UnityEngine.XR.Interaction.Tookit;
 // using UnityEngine.XR.XRGrabInteractable;
@@ -24,6 +25,7 @@ public class ComponentController : MonoBehaviour
     private XRGrabInteractable xri;
     Rigidbody rb;
     // XRGrabInteractable xri;
+    private GameObject LevelManager;
 
 
 
@@ -36,6 +38,7 @@ public class ComponentController : MonoBehaviour
         rb =  gameObject.GetComponent<Rigidbody>();
         // xri = gameObject.GetComponent<XRGrabInteractable>();
         xri = GetComponent<XRGrabInteractable>();
+        LevelManager = GameObject.FindGameObjectWithTag("Level Manager");
     }
 
     // Update is called once per frame
@@ -89,6 +92,7 @@ public class ComponentController : MonoBehaviour
         } else {
             // play error sound when in the wrong zone.
             source.PlayOneShot(errorSound);
+            LevelManager.GetComponent<Level1Manager>().AddError();
         }
     }
 
