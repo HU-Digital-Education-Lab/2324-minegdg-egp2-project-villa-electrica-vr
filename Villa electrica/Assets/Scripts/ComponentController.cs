@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+// using UnityEngine.XR.Interaction.Tookit;
+// using UnityEngine.XR.XRGrabInteractable;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class ComponentController : MonoBehaviour
 {
@@ -17,8 +20,12 @@ public class ComponentController : MonoBehaviour
     public bool isCable;
     public bool correctPlace = false;
     private GameObject part1_clone;
-
+    private XRGrabInteractable xri;
     Rigidbody rb;
+    // XRGrabInteractable xri;
+
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,10 +33,8 @@ public class ComponentController : MonoBehaviour
         // get the audio source.
         source = GetComponent<AudioSource>();
         rb =  gameObject.GetComponent<Rigidbody>();
-        rb.constraints =    RigidbodyConstraints.FreezePositionX | 
-                            RigidbodyConstraints.FreezePositionY | 
-                            RigidbodyConstraints.FreezePositionZ;
-
+        // xri = gameObject.GetComponent<XRGrabInteractable>();
+        xri = GetComponent<XRGrabInteractable>();
     }
 
     // Update is called once per frame
@@ -47,6 +52,11 @@ public class ComponentController : MonoBehaviour
             {
                     rb.useGravity = false;
                     source.PlayOneShot(correctSound);
+                    rb.constraints =    RigidbodyConstraints.FreezePositionX | 
+                                        RigidbodyConstraints.FreezePositionY | 
+                                        RigidbodyConstraints.FreezePositionZ;
+                   //Destroy(xri);
+                    xri.gameObject.SetActive(false);
             }
             else 
             {
