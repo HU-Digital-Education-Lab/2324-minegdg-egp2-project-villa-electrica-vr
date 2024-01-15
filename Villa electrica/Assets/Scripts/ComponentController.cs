@@ -11,6 +11,7 @@ public class ComponentController : MonoBehaviour
     public GameObject TouchZone;
     // Object containing the object that replaces the zone with a component
     public GameObject Replacement;
+    public GameObject DissableOnTouch;
     public bool isPart1;
 
     private AudioSource source;
@@ -56,7 +57,9 @@ public class ComponentController : MonoBehaviour
                                         RigidbodyConstraints.FreezePositionY | 
                                         RigidbodyConstraints.FreezePositionZ;
                    //Destroy(xri);
-                    xri.gameObject.SetActive(false);
+                    // xri.gameObject.SetActive(false);
+                    // this.transform.parent.gameObject.SetActive(false);
+                    DissableOnTouch.SetActive(false);
             }
             else 
             {
