@@ -59,7 +59,7 @@ public class ComponentController : MonoBehaviour
                    //Destroy(xri);
                     // xri.gameObject.SetActive(false);
                     // this.transform.parent.gameObject.SetActive(false);
-                    DissableOnTouch.SetActive(false);
+                    // DissableOnTouch.SetActive(false);
             }
             else 
             {
