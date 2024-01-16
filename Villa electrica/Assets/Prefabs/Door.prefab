@@ -303,9 +303,9 @@ HingeJoint:
   m_Anchor: {x: 0, y: 1, z: 0.4}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -9, y: -0.928, z: 12.7}
+  m_ConnectedAnchor: {x: 1.1592007, y: 2.3773508, z: -1.078121}
   serializedVersion: 2
-  m_UseSpring: 0
+  m_UseSpring: 1
   m_Spring:
     spring: 0
     damper: 0
@@ -447,7 +447,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 221eb85d6e1c4964c8a8ee5ee2f92b97,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 221eb85d6e1c4964c8a8ee5ee2f92b97,
         type: 3}
@@ -457,7 +457,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 221eb85d6e1c4964c8a8ee5ee2f92b97,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13.5
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 221eb85d6e1c4964c8a8ee5ee2f92b97,
         type: 3}
@@ -627,8 +627,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.35281944, y: 4.7097507, z: 0.7276554}
-  m_Center: {x: -0.0061159134, y: 2.347082, z: -1.1790342}
+  m_Size: {x: 0.35281944, y: 4.7097507, z: 0.5328603}
+  m_Center: {x: -0.0061159134, y: 2.347082, z: -1.2764318}
 --- !u!4 &7844342429448618018 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 221eb85d6e1c4964c8a8ee5ee2f92b97,

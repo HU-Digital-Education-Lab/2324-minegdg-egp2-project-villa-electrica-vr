@@ -17,11 +17,12 @@ public class Level1Manager : MonoBehaviour
     public TextMeshProUGUI ScoreText;
     public TextMeshProUGUI HighScoreText;
     private int error_count = 0;
+    public static int highscore;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        highscore = PlayerPrefs.GetInt("HSLevel1", highscore);
     }
 
     // Update is called once per frame
@@ -88,9 +89,19 @@ public class Level1Manager : MonoBehaviour
         }
         else
         {
-            score = 999;
+            score = 0;
         }
         ScoreText.text = "" + score;
+
+        if (score > highscore)
+        {
+            PlayerPrefs.SetInt("HSLevel1", score);
+            HighScoreText.text = "" + score;
+        }
+        else
+        {
+            HighScoreText.text = "" + highscore;
+        }
 
         endScreen.gameObject.SetActive(true);
         foreach (GameObject component in hitboxes_part2)
