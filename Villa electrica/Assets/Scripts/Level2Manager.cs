@@ -7,20 +7,19 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class Level2Manager : MonoBehaviour
 {
-    public GameObject part1;
-    //public GameObject endScreen;
+    public GameObject level2;
+    public GameObject endScreen;
     public string MainSceneName;
-    public List<GameObject> hitboxes_part1;
-    //public List<GameObject> hitboxes_part2;
-    public bool part1_active = true;
-    //public TextMeshProUGUI ScoreText;
-    //public TextMeshProUGUI HighScoreText;
+    public List<GameObject> hitboxes_level2;
+    public TextMeshProUGUI ScoreText;
+    public TextMeshProUGUI HighScoreText;
     private int error_count = 0;
+    public static int highscore;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        highscore = PlayerPrefs.GetInt("HSLevel2", highscore);
     }
 
     // Update is called once per frame
@@ -28,10 +27,10 @@ public class Level2Manager : MonoBehaviour
     {
         bool done = true;
 
-        foreach (GameObject component in hitboxes_part1)
+        foreach (GameObject component in hitboxes_level2)
         {
-            ComponentController componentController = component.GetComponent<ComponentController>();
-            if (!componentController.correctPlace)
+            CableController cableController = component.GetComponent<CableController>();
+            if (!cableController.correctPlace)
             {
                 done = false;
                 break;
@@ -40,11 +39,11 @@ public class Level2Manager : MonoBehaviour
 
         if (done)
         {
-            GoToMainScreen();
+            ShowEndscreen();
         }
     }
 
-    /*void ShowEndscreen()
+    void ShowEndscreen()
     {
         int score;
         if (error_count < 30)
@@ -53,18 +52,28 @@ public class Level2Manager : MonoBehaviour
         }
         else
         {
-            score = 999;
+            score = 0;
         }
         ScoreText.text = "" + score;
 
-        endScreen.gameObject.SetActive(true);
-        foreach (GameObject component in hitboxes_part2)
+        if (score > highscore)
         {
-            ComponentController componentController = component.GetComponent<ComponentController>();
-            componentController.GetPart1Clone().SetActive(false);
+            PlayerPrefs.SetInt("HSLevel2", score);
+            HighScoreText.text = "" + score;
         }
-        part1.gameObject.SetActive(false);
-    }*/
+        else
+        {
+            HighScoreText.text = "" + highscore;
+        }
+
+        endScreen.gameObject.SetActive(true);
+        foreach (GameObject component in hitboxes_level2)
+        {
+            CableController cableController = component.GetComponent<CableController>();
+            //cableController.GetPart1Clone().SetActive(false);
+        }
+        level2.gameObject.SetActive(false);
+    }
 
     public void GoToMainScreen()
     {
