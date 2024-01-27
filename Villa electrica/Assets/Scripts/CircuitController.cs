@@ -23,6 +23,7 @@ private AudioSource source;
 
     public GameObject Cable;
     public int _cableIndex = 0;
+    public bool levelOver = false;
 
     
     // Start is called before the first frame update
@@ -118,6 +119,11 @@ private AudioSource source;
             {
                 source.PlayOneShot(errorSound);
             }
+        }
+
+        if (_SLIndex == _SLTransforms.Length && _LIndex == _LTransforms.Length && _NIndex == _NTransforms.Length )
+        {
+            levelOver = true;
         }
     }
 }

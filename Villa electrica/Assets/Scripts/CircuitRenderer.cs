@@ -58,16 +58,12 @@ public class CircuitRenderer : MonoBehaviour
             length = Cable.GetComponent<CircuitController>()._SLLength;
             index = Cable.GetComponent<CircuitController>()._SLIndex;
         }
+
         _lineRenderer.positionCount = length;
         for (int i = 0; i < index; i++)
         {
             _lineRenderer.SetPosition(i, _cableTransforms[i].position);
 
         } 
-        // if (Cable.GetComponent<CircuitController>()._cableIndex == SectionID)
-        // {
-        //     _lineRenderer.SetPosition(Cable.GetComponent<CircuitController>()._cableIndex + 1, Cable.transform.position);
-        // }
-        
     }
 }
