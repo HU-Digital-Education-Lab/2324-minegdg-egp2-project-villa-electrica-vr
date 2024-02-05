@@ -62,9 +62,4 @@ public class CableController : MonoBehaviour
             LevelManager.GetComponent<Level2Manager>().AddError();
         }
     }
-
-    /*public GameObject GetPart1Clone()
-    {
-        return part1_clone;
-    }*/
 }
