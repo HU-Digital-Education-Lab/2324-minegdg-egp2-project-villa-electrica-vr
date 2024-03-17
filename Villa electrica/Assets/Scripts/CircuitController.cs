@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class CircuitController : MonoBehaviour
@@ -23,20 +24,21 @@ private AudioSource source;
 
     public GameObject Cable;
     public int _cableIndex = 0;
-    public bool levelOver = false;
 
-    
+    private GameObject LevelManager;
+
     // Start is called before the first frame update
     void Start()
     {
         // _lineRenderer = GetComponent<LineRenderer>();
         source = GetComponent<AudioSource>();
+        LevelManager = GameObject.FindGameObjectWithTag("Level Manager");
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -64,9 +66,9 @@ private AudioSource source;
                 _SLLength = _SLTransforms.Length;
                 source.PlayOneShot(correctSound);
             }
-            else 
+            else
             {
-                source.PlayOneShot(errorSound);
+                Error();
             }
         }
         else if (_cableIndex == 1)
@@ -81,9 +83,9 @@ private AudioSource source;
                     _cableIndex = 0;
                 }
             }
-            else 
+            else
             {
-                source.PlayOneShot(errorSound);
+                Error();
             }
         }
         else if (_cableIndex == 2)
@@ -98,9 +100,9 @@ private AudioSource source;
                     _cableIndex = 0;
                 }
             }
-            else 
+            else
             {
-                source.PlayOneShot(errorSound);
+                Error();
             }
         }
         else if (_cableIndex == 3)
@@ -117,13 +119,19 @@ private AudioSource source;
             }
             else 
             {
-                source.PlayOneShot(errorSound);
+                Error();
             }
         }
 
         if (_SLIndex == _SLTransforms.Length && _LIndex == _LTransforms.Length && _NIndex == _NTransforms.Length )
         {
-            levelOver = true;
+            LevelManager.GetComponent<Level3Manager>().SetGameOver();
         }
+    }
+
+    private void Error()
+    {
+        source.PlayOneShot(errorSound);
+        LevelManager.GetComponent<Level3Manager>().AddError();
     }
 }

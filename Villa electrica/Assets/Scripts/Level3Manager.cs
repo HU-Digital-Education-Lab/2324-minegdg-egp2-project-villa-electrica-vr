@@ -3,44 +3,30 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.SocialPlatforms.Impl;
 
-public class Level2Manager : MonoBehaviour
+public class Level3Manager : MonoBehaviour
 {
-    public GameObject level2;
+    public GameObject level3;
     public GameObject endScreen;
     public string MainSceneName;
-    public List<GameObject> hitboxes_level2;
     public TextMeshProUGUI ScoreText;
     public TextMeshProUGUI HighScoreText;
     private int error_count = 0;
     public static int highscore;
-    public bool done = false;
+    public bool levelOver = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        highscore = PlayerPrefs.GetInt("HSLevel2", highscore);
+        highscore = PlayerPrefs.GetInt("HSLevel3", highscore);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (done)
+        if (levelOver)
         {
             ShowEndscreen();
-        }
-
-        done = true;
-
-        foreach (GameObject component in hitboxes_level2)
-        {
-            CableController cableController = component.GetComponent<CableController>();
-            if (!cableController.correctPlace)
-            {
-                done = false;
-                break;
-            }
         }
     }
 
@@ -59,7 +45,7 @@ public class Level2Manager : MonoBehaviour
 
         if (score > highscore)
         {
-            PlayerPrefs.SetInt("HSLevel2", score);
+            PlayerPrefs.SetInt("HSLevel3", score);
             HighScoreText.text = "" + score;
         }
         else
@@ -68,7 +54,7 @@ public class Level2Manager : MonoBehaviour
         }
 
         endScreen.gameObject.SetActive(true);
-        level2.gameObject.SetActive(false);
+        level3.gameObject.SetActive(false);
     }
 
     public void GoToMainScreen()
@@ -80,5 +66,9 @@ public class Level2Manager : MonoBehaviour
     {
         error_count++;
     }
-}
 
+    public void SetGameOver()
+    {
+        levelOver = true;
+    }
+}

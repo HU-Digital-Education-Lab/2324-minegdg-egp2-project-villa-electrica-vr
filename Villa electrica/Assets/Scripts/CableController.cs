@@ -25,28 +25,30 @@ public class CableController : MonoBehaviour
 
     void Update()
     {
-        lineRenderer.positionCount = cableTransforms.Length;
-        for (int i = 1; i < cableIndex; i++)
+        if (!correctPlace)
         {
-            lineRenderer.SetPosition(i, cableTransforms[i].position);
-        } 
+            lineRenderer.positionCount = cableTransforms.Length;
+            for (int i = 1; i < cableIndex; i++)
+            {
+                lineRenderer.SetPosition(i, cableTransforms[i].position);
+            } 
 
-        if (cableIndex == 0) 
-        {
-            lineRenderer.SetPosition(0, Cable.transform.position);
-            lineRenderer.SetPosition(1, Cable.transform.position);
-        } 
-        else if (cableIndex == 1) 
-        {
-            lineRenderer.SetPosition(0, cableTransforms[0].position);
-            lineRenderer.SetPosition(1, Cable.transform.position);
-        } 
-        else 
-        {
-            lineRenderer.SetPosition(cableIndex + 1, Cable.transform.position);
-            correctPlace = true;
+            if (cableIndex == 0) 
+            {
+                lineRenderer.SetPosition(0, Cable.transform.position);
+                lineRenderer.SetPosition(1, Cable.transform.position);
+            } 
+            else if (cableIndex == 1) 
+            {
+                lineRenderer.SetPosition(0, cableTransforms[0].position);
+                lineRenderer.SetPosition(1, Cable.transform.position);
+            } 
+            else 
+            {
+                lineRenderer.SetPosition(cableIndex + 1, Cable.transform.position);
+                correctPlace = true;
+            }
         }
-        
     }
 
     private void OnTriggerEnter(Collider other)
